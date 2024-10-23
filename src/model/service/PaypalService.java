@@ -3,19 +3,13 @@ package model.service;
 public class PaypalService implements OnlinePaymentService {
 
 	@Override
-	public Double paymentFee(Double amount) {
+	public double paymentFee(double amount) {
 		return amount * 0.02;
 	}
 
 	@Override
-	public Double interest(Double amount, Integer months) {
-		double juros = 0.0;
-		
-		for(int i = 1; i <= months; i++) {
-			juros += months * 0.01;
-		}
-		
-		return juros;
+	public double interest(double amount, int months) {
+		return amount * 0.01 * months;
 	}
 
 }
